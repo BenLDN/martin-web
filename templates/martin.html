@@ -1,0 +1,31 @@
+<!doctype html>
+
+<html>
+
+<!-- 	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='hash_style.css') }}"> -->
+
+   	<body>
+
+   		<div class="hasher">
+
+	   	<h2>Hey hey heey</h2>
+		<h3>Martin's here</h3>
+
+
+		<form class="game_form" action="{{ url_for('play') }}" method="POST">
+		 	Parameters of the game:<br><br>
+			<input type="number" name="startingChips" placeholder="starting chips">
+			<input type="number" name="rounds" placeholder="number of rounds">
+			<input type="number" name="games" placeholder="number of games">
+
+		 	<br><br>
+		 	<input type="submit" value="Play!">
+		</form> 
+
+		<img src="{{url_for('static', filename='martin.png')}}">
+
+		</div>
+      
+   	</body>
+	
+</html>
