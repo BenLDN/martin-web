@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 
-from flask import Flask, render_template, request, redirect, response
+from flask import Flask, render_template, request, redirect
 import coinflips
 
 app = Flask(__name__)
 
+app.config['TEMPLATES_AUTO_RELOAD']=True
+
 @app.route('/')
 def mainpage():
-	response.cache_control.max_age = 1
 	return render_template("martin.html")
 
 @app.route('/play', methods = ['POST'])

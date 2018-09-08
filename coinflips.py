@@ -63,19 +63,21 @@ class coinGame:
 
 def martingale_play(simStartingChips=100, simRounds=100, simGames=2):
 
+	
 	#list of coinGame objects
 	games=[]
 
 	#clear the plot
-	#plt.gcf().clear()
-	plt.clf()
-	plt.cla()
-	plt.close()
+	plt.gcf().clear()
+	#plt.clf()
+	#plt.cla()
+	#plt.close()
 
 	#Play the game n times and plot the chip level during the game
 	for i in range(1,simGames+1):
 	    games.append(coinGame(simStartingChips,simRounds))
 	    plt.plot(games[i-1].chipList)
+
 
 	plt.savefig('static/martin.png')
 	#plt.show()

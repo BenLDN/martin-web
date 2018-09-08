@@ -13,11 +13,27 @@
 
 
 		<form class="game_form" action="{{ url_for('play') }}" method="POST">
-		 	Parameters of the game:<br><br>
-			<input type="number" name="startingChips" placeholder="starting chips">
-			<input type="number" name="rounds" placeholder="number of rounds">
-			<input type="number" name="games" placeholder="number of games">
 
+		 	Starting chips: <br>
+		 	<input type="radio" id="start100" name="startingChips" value="100" checked="checked"> <label for="100">100</label>
+			<input type="radio" id="start500" name="startingChips" value="500"> <label for="500">500</label>
+			<input type="radio" id="start1000" name="startingChips" value="1000"> <label for="1000">1000</label>
+
+			<br>
+			Number of rounds: <br>
+			<input type="radio" id="rounds10" name="rounds" value="10"> <label for="10">10</label>
+			<input type="radio" id="rounds50" name="rounds" value="50"> <label for="50">50</label>
+		 	<input type="radio" id="rounds100" name="rounds" value="100" checked="checked"> <label for="100">100</label>
+			<input type="radio" id="rounds1000" name="rounds" value="1000"> <label for="1000">1000</label>
+			<input type="radio" id="rounds10000" name="rounds" value="10000"> <label for="1000">10000</label>
+			<br>
+			Number of games: <br>
+			<input type="radio" id="games1" name="games" value="1" <label for="1">1</label>
+			<input type="radio" id="games2" name="games" value="2"> <label for="2">2</label>
+			<input type="radio" id="games3" name="games" value="3" checked="checked"> <label for="3">3</label>
+			<input type="radio" id="games5" name="games" value="5"> <label for="5">5</label>
+			<input type="radio" id="games10" name="games" value="10"> <label for="10">10</label>
+			<input type="radio" id="games50" name="games" value="50"> <label for="50">50</label>
 		 	<br><br>
 		 	<input type="submit" value="Play!">
 		</form> 
