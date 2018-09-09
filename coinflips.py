@@ -3,7 +3,7 @@
 #Simulation of the martingale strategy in a double or nothing coin flip game
 #Try it with 100, 100 & 5 first
 
-import random
+import random, io
 import matplotlib.pyplot as plt
 
 #An instance of the coinGame class is one game with a specific amount of starting chips and rounds
@@ -79,12 +79,14 @@ def martingale_play(simStartingChips=100, simRounds=100, simGames=2):
 	    plt.plot(games[i-1].chipList)
 
 
-	plt.savefig('static/martin.png')
+	#plt.savefig('static/martin.png')
 	#plt.show()
+	img = io.BytesIO()
+	plt.savefig(img, format='png')
 
-	chipLists=[]
+	#chipLists=[]
 
-	for game in games:
-		chipLists.append(game.chipList)
+	#for game in games:
+	#	chipLists.append(game.chipList)
 
-	return chipLists
+	return img

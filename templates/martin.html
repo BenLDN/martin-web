@@ -10,6 +10,7 @@
 
 	   	<h2>Hey hey heey</h2>
 		<h3>Martin's here</h3>
+		Martin's gonna show you how much money you can lose with the martingale strategy. (Decription to be added) <br>
 
 
 		<form class="game_form" action="{{ url_for('play') }}" method="POST">
@@ -38,7 +39,9 @@
 		 	<input type="submit" value="Play!">
 		</form> 
 
-		<img src="{{url_for('static', filename='martin.png')}}">
+
+
+		<img src="data:image/png;base64, {{ plot_url }}">
 
 		</div>
       
