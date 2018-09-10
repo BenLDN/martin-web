@@ -29,10 +29,6 @@ def play():
 		img.seek(0)
 		plot_data = urllib.quote(base64.b64encode(img.read()).decode())
 
-		print(plot_data)
-
-		#time.sleep(5)
-
 		return redirect('/')
 
 if __name__ == '__main__':
