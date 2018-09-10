@@ -4,15 +4,18 @@
 
 <!-- 	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='hash_style.css') }}"> -->
 
-   	<body>
+   	<body background="{{url_for('static', filename='connect.png')}}">
 
    		<div class="hasher">
 
-	   	<h2>Hey hey heey</h2>
+	   	<h2>Hey hey heeeeey</h2>
 		<h3>Martin's here</h3>
-		Martin's gonna show you how much money you can lose with the martingale strategy. (Decription to be added) <br>
+		
+		This app's gonna show you how much money you can lose with the <a href="https://en.wikipedia.org/wiki/Martingale_(betting_system)">martingale strategy</a>. <br>
+		Each round is a coinflip - double or nothing. You can set your starting money, the number of rounds and the number of games you want to simulate. <br>
+		After hitting "Play!", a graph will appear showing the result of the game. You can go into negative with your money just to illustrate how much you can lose.
 
-
+		<br><br>
 		<form class="game_form" action="{{ url_for('play') }}" method="POST">
 
 		 	Starting chips: <br>
@@ -45,7 +48,7 @@
 
 
 
-		<img src="data:image/png;base64, {{ plot_url }}">
+		<img src="data:image/png;base64, {{ plot_url }}" alt="Graph will be here">
 
 		</div>
       
