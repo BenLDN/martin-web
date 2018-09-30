@@ -1,20 +1,26 @@
 #!/usr/bin/env python3
 
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect #Blueprint
 import coinflips
 import urllib, base64
 #import time
 
 app = Flask(__name__)
+app.config['APPLICATION_ROOT'] = "/martin-web"
 
-@app.route('/')
+plot_data=""
+prefix="/martin-web"
+
+
+@app.route(prefix+'/')
 def mainpage():
 
+	global plot_data
 
 	
 	return render_template("martin.html", plot_url=plot_data)
 
-@app.route('/play', methods = ['POST'])
+@app.route(prefix+'/play', methods = ['POST'])
 def play():
 
 	if request.method == "POST":
@@ -29,8 +35,10 @@ def play():
 		img.seek(0)
 		plot_data = urllib.quote(base64.b64encode(img.read()).decode())
 
-		return redirect('/')
+		return redirect(prefix+'/')
+
+
 
 if __name__ == '__main__':
-	plot_data=""
+	
 	app.run(host='0.0.0.0', debug = True)
