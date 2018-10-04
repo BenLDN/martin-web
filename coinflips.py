@@ -4,6 +4,8 @@
 #Try it with 100, 100 & 5 first
 
 import random, io
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 #An instance of the coinGame class is one game with a specific amount of starting chips and rounds
