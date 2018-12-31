@@ -33,7 +33,7 @@ def play():
 
 		img=coinflips.martingale_play(startingChips, rounds, games)
 		img.seek(0)
-		plot_data = urllib.quote(base64.b64encode(img.read()).decode())
+		plot_data = urllib.parse.quote(base64.b64encode(img.read()).decode())
 
 		return redirect(prefix+'/')
 
