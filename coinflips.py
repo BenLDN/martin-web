@@ -1,17 +1,15 @@
 #!/usr/bin/env python3
 
 #Simulation of the martingale strategy in a double or nothing coin flip game
-#Try it with 100, 100 & 5 first
 
 import random, io
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
-#An instance of the coinGame class is one game with a specific amount of starting chips and rounds
-#The game is simulated in __init__ & there is a function defined to show the results
-#Print results method not used right now, left in to make future improvement easier
-
+#An instance of the coinGame class is one game with a specified amount of starting chips and rounds (i.e. flips)
+#The game is simulated in __init__ & there is a function defined to get the results
+#The player uses the martingale strategy (i.e. double the next bet if you lost)
 class coinGame:
     def __init__(self, startingChips, noRounds):
         self.startingChips=startingChips
@@ -54,15 +52,7 @@ class coinGame:
 
         self.finalChips=chips
 
-    # def printResults(self):
-    #     print("Number of rounds: "+str(self.noRounds))
-    #     print("Number of wins: "+str(self.noWins))
-    #     print("Number of losses: "+str(self.noLosses))
-    #     print("Starting chips: "+str(self.startingChips))
-    #     print("Final chips: "+str(self.finalChips))
-    #     print("Lowest chip level during the game: "+str(self.minChips))
-    #     print("Highers chip level during the game: "+str(self.maxChips))
-
+#multiple games can be played by calling this function which creates instances of the coinGame class
 def martingale_play(simStartingChips=100, simRounds=100, simGames=2):
 
 	
@@ -71,6 +61,8 @@ def martingale_play(simStartingChips=100, simRounds=100, simGames=2):
 
 	#clear the plot
 	plt.gcf().clear()
+    
+    #depending on library verions these might be necessary to clean the plot
 	#plt.clf()
 	#plt.cla()
 	#plt.close()
@@ -81,14 +73,8 @@ def martingale_play(simStartingChips=100, simRounds=100, simGames=2):
 	    plt.plot(games[i-1].chipList)
 
 
-	#plt.savefig('static/martin.png')
-	#plt.show()
+	#return the image of the plot
 	img = io.BytesIO()
 	plt.savefig(img, format='png')
-
-	#chipLists=[]
-
-	#for game in games:
-	#	chipLists.append(game.chipList)
 
 	return img
